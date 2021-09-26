@@ -9,7 +9,7 @@ function ProductOptions({ name, values, selectedOptions, setOptions }) {
           const id = `option-${name}-${value}`;
           const checked = selectedOptions[name] === value;
           return (
-            <label htmlFor={id}>
+            <label htmlFor={id} key={id}>
               <input
                 type='radio'
                 id={id}

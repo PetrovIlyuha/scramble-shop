@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useShopContext } from '../context/ShopContext';
 import { formatPrice } from '../utils';
 import ProductOptions from './ProductOptions';
 
 export default function ProductForm({ product }) {
+  const { addToCart } = useShopContext();
   const allVariantsOptions = product?.variants?.edges?.map(variant => {
     const allOptions = {};
     variant.node.selectedOptions.map(item => {
@@ -24,7 +26,7 @@ export default function ProductForm({ product }) {
   product.options.map(item => {
     defaultValues[item.name] = item.values[0];
   });
-  const [selectedVariant, setSelectedVariant] = useState(allVariantsOptions);
+  const [selectedVariant, setSelectedVariant] = useState(allVariantsOptions[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultValues);
 
   const setOptions = (name, value) => {
@@ -34,9 +36,19 @@ export default function ProductForm({ product }) {
         [name]: value,
       };
     });
+
+    const selection = {
+      ...selectedOptions,
+      [name]: value,
+    };
+
+    allVariantsOptions.map(item => {
+      if (JSON.stringify(item.options) === JSON.stringify(selection)) {
+        setSelectedVariant(item);
+      }
+    });
   };
 
-  console.log(selectedOptions);
   return (
     <div className='rounded-2xl p-4 shadow-lg flex flex-col w-full md:w-1/3'>
       <h2 className='text-2xl font-bold'>{product.title}</h2>
@@ -54,7 +66,9 @@ export default function ProductForm({ product }) {
           />
         );
       })}
-      <button className='bg-green-700 rounded-lg text-white font-bold px-2 py-3 hover:bg-green-900'>
+      <button
+        onClick={() => addToCart(selectedVariant)}
+        className='bg-green-700 rounded-lg text-white font-bold px-2 py-3 hover:bg-green-900'>
         Add To Cart
       </button>
     </div>
