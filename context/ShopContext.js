@@ -52,6 +52,9 @@ export default function ShopContextProvider({ children }) {
   };
 
   const removeCartItem = async itemToRemove => {
+    if (cart.length === 1) {
+      setCartOpen(false);
+    }
     const updatedCart = cart.filter(item => item.id !== itemToRemove.id);
     setCart(updatedCart);
     const newCheckout = await updateCheckout(checkoutId, updatedCart);
@@ -59,9 +62,6 @@ export default function ShopContextProvider({ children }) {
       CHECKOUT_ID,
       JSON.stringify([updatedCart, newCheckout]),
     );
-    if (cart.length === 1) {
-      setCartOpen(false);
-    }
   };
   return (
     <CartContext.Provider

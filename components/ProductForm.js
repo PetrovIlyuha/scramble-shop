@@ -42,8 +42,6 @@ export default function ProductForm({ product }) {
       [name]: value,
     };
 
-    console.log({ selection });
-
     allVariantsOptions.map(item => {
       if (JSON.stringify(item.options) === JSON.stringify(selection)) {
         setSelectedVariant(item);
