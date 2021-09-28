@@ -1,4 +1,7 @@
 import { useRouter } from 'next/router';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 import 'tailwindcss/tailwind.css';
 import Layout from '../components/Layout';
 import ShopContextProvider from '../context/ShopContext';
