@@ -4,6 +4,7 @@ const footerNavigation = [
   { name: 'About', href: '#' },
   { name: 'Contacts', href: '#' },
   { name: 'User Policy', href: '#' },
+  { name: 'Our Guarantees', href: '#' },
 ];
 
 export default function Footer() {
