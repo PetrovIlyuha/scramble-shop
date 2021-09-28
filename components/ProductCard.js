@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { formatPrice } from '../utils';
 
 const ProductCard = ({ product }) => {
-  console.log({ product });
   const { handle, title } = product.node;
   const { originalSrc, altText } = product.node.images.edges[0].node;
   const { amount: price } = product.node.priceRange.minVariantPrice;
