@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <div className='my-32 mx-auto max-w-7xl px-14 py-12 sm:mt-44 sm:mx-12 md:mt-60 text-center bg_sliding rounded shadow-2xl'>
+    <div className='my-32 mx-auto xl:max-w-6xl md:max-w-5xl sm:max-w-xl px-14 py-12 sm:mt-12 md:mt-60 text-center bg_sliding rounded shadow-2xl'>
       <h1 className='font-extrabold text-gray-900'>
         <p className='text-xl sm:text-3xl md:text-4xl text-green-300'>
           FutureProof Store
