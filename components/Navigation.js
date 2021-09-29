@@ -17,8 +17,8 @@ export default function Navigation() {
     return cart.reduce((total, item) => (total += item?.variantQuantity), 0);
   }
   return (
-    <header className='border-b sticky top-0 z-20 bg-white'>
-      <div className='flex items-center justify-between max-w-6xl pt-4 pb-2 px-4 mx-auto lg:max-w-screen-xl'>
+    <header className='border-b sticky top-0 z-20 bg-black drop-shadow-xl'>
+      <div className='flex items-center justify-between max-w-6xl pt-4 pb-2 px-4 mx-auto lg:max-w-screen-xl text-white'>
         <Link href={`/`} passHref>
           <a className='cursor-pointer flex flex-row items-center w-48 justify-between'>
             <ShoppingBagIcon
