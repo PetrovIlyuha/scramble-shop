@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { formatPrice } from '../utils';
 
-const ProductCard = ({ product }) => {
+const RecommendedProductCard = ({ product }) => {
   const { handle, title } = product.node;
   const { originalSrc, altText } = product.node.images.edges[0].node;
   const { amount: price } = product.node.priceRange.minVariantPrice;
@@ -29,4 +29,4 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default RecommendedProductCard;

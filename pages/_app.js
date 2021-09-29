@@ -3,6 +3,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'tailwindcss/tailwind.css';
+import '../styles/main.css';
 import Layout from '../components/Layout';
 import ShopContextProvider from '../context/ShopContext';
 

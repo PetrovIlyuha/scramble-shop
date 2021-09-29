@@ -1,0 +1,14 @@
+.bg_sliding {
+  animation: slide 14s linear infinite;
+  will-change: background-position;
+  background: linear-gradient(to left, white, rgb(33, 12, 90));
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100vw 0;
+  }
+}
