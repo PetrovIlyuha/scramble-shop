@@ -19,7 +19,7 @@ export default function Home({ products }) {
         />
         <meta property='og:title' content='Modern NFT Store' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='scramble-shop.vercel.app' />
+        <meta property='og:url' content='future-proof.vercel.app' />
         <meta
           property='og:description'
           content='Minimalistic eCommerce website presenting to you various works from the digital arts scene'
